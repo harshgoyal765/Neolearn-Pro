@@ -1,13 +1,15 @@
 import React from "react";
 import { FaStar } from "react-icons/fa6";
 import emptyImg from "../assets/empty.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Card({ thumbnail, title, category, price, id }) {
+  const navigate = useNavigate()
   return (
     <div className="max-w-sm w-full bg-white rounded-2xl overflow-hidden 
   shadow-md hover:shadow-xl 
   hover:-translate-y-2 transform transition-all duration-300
-  border border-gray-200 hover:border-indigo-400">
+  border border-gray-200 hover:border-indigo-400" onClick={()=>navigate(`viewcourse/${id}`)}>
       {/* Thumbnail */}
       <div className="relative overflow-hidden">
         <img

@@ -5,7 +5,7 @@ import { MdAppShortcut } from "react-icons/md";
 
 const ExploreCourses = () => {
   return (
-    <div className="w-[100vw] min-h-[60vh] flex flex-col lg:flex-row items-center justify-center gap-8 px-[30px] py-12 bg-gradient-to-r from-indigo-50 to-purple-50">
+    <div className="w-[100vw] min-h-[60vh] flex flex-col lg:flex-row items-center justify-center gap-8 px-[30px] py-12 bg-gradient-to-l from-indigo-50 to-green-200">
       {/* left/top div */}
       <div className="w-[100%] lg:w-[350px] flex flex-col items-start justify-center gap-1 md:px-[40px] px-[20px]">
         <span className="text-[40px] font-bold text-gray-900 leading-tight">

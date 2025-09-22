@@ -115,4 +115,56 @@ export const getCoursesDataApi = async (courseId) => {
   });
 };
 
+//add lecture
+export const addLecture = (courseId,data) => {
+  return axios.post(`${serverUrl}/api/course/createlecture/${courseId}`,data, {
+    withCredentials: true,
+  });
+};
+
+export const getLecture = (courseId) => {
+  return axios.get(`${serverUrl}/api/course/courselecture/${courseId}`, {
+    withCredentials: true,
+  });
+};
+
+export const editLectureInfo = (lectureId , formData) => {
+  return axios.post(`${serverUrl}/api/course/editlecture/${lectureId}`,formData, {
+    withCredentials: true,
+  });
+};
+
+
+export const removeLectureInfo = (lectureId) => {
+  return axios.delete(`${serverUrl}/api/course/removelecture/${lectureId}`, {
+    withCredentials: true,
+  });
+};
+
+
+export const getCreatorInfo = (selectedCourse) => {
+  return axios.post(`${serverUrl}/api/course/creator`, {
+    userId: selectedCourse ? selectedCourse.creator : null
+  }, {
+    withCredentials: true,
+  });
+};
+//razorpay order api
+export const razorOrder = (userId,courseId) => {
+  return axios.post(`${serverUrl}/api/order/razorpay-order`, {
+    userId, courseId
+  }, {
+    withCredentials: true,
+  });
+};
+
+
+export const razorOrderVerify = (response,courseId,userId) => {
+  return axios.post(`${serverUrl}/api/order/verifypayment`, {
+    ...response,courseId,userId
+  }, {
+    withCredentials: true,
+  });
+};
+
 

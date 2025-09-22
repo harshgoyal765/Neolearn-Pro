@@ -11,10 +11,12 @@ import { useDispatch, useSelector } from "react-redux";
 const EditCourse = () => {
  
   const { courseId } = useParams();
+
   const navigate = useNavigate();
   
   const [loading, setLoading] = useState(false);
   const [loading1, setLoading1] = useState(false);
+  const [selectCourse ,setSelectCourse]=useState(null)
   
   // Individual States
   const [title, setTitle] = useState("");
@@ -35,6 +37,7 @@ const EditCourse = () => {
   const getCourseById = async () => {
     try {
       const result = await getCoursesByid(courseId);
+  
       if (result?.data) {
         setTitle(result.data.title || "");
         setSubTitle(result.data.subTitle || "");
@@ -44,6 +47,7 @@ const EditCourse = () => {
         setPrice(result.data.price || "");
         setIsPublished(result.data.isPublished || false);
         setFrontendImage(result.data.thumbnail || img);
+        setSelectCourse(result.data)
       }
     } catch (error) {
       console.error("Error fetching course:", error);
@@ -165,8 +169,7 @@ const handleRemove = async () => {
           <FaArrowLeft className="mr-2" /> Back
         </button>
         <button
-          onClick={() => navigate(`/lectures/${courseId}`)}
-          className="px-4 py-2 rounded-lg bg-black text-white shadow hover:scale-105 transition"
+          className="px-4 py-2 rounded-lg bg-black text-white shadow hover:scale-105 transition" onClick={()=> navigate(`/createlecture/${selectCourse?._id}`)}
         >
           Go to lectures page
         </button>

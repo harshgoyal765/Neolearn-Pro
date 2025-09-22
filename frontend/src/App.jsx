@@ -11,11 +11,18 @@ import Editprofile from './pages/Editprofile'
 import Dashboard from './pages/Educator/Dashboard'
 import Courses from './pages/Educator/Courses'
 import CreateCourses from './pages/Educator/CreateCourses'
+import { useLocation } from 'react-router-dom';
 import getCreatorCourse from './customHooks/getCreatorCourse'
 import useGetCurrentUser from './customHooks/getCurrentUser'
 import EditCourse from './pages/Educator/EditCourse'
 import getPublishedCourse from './customHooks/getPublishedCourse'
 import AllCourses from './pages/AllCourses'
+import CreateLecture from './pages/Educator/CreateLecture'
+import EditLecture from './pages/Educator/EditLecture'
+import ViewCourse from './pages/ViewCourse'
+import ScrollToTop from './components/ScrollToTop'
+import ViewLecture from './pages/ViewLecture'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -23,10 +30,12 @@ const App = () => {
   getCreatorCourse()
   getPublishedCourse()
   const { userData } = useSelector((state) => state.user);
+   const location = useLocation();
   return (
     
     <>
       <ToastContainer />
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Signup" element={!userData ? <Signup /> 
@@ -47,8 +56,20 @@ const App = () => {
         <Route path="/createcourses" element={userData?.role === "educator" ? <CreateCourses/>:
           <Navigate to={"/Signup"} />} />
          <Route path="/editcourse/:courseId" element={userData?.role === "educator" ? <EditCourse/>:
-          <Navigate to={"/Signup"} />}/>
+          <Navigate to={"/Signup"} />} />
+        
+          <Route path="/createlecture/:courseId" element={userData?.role === "educator" ? <CreateLecture/>:
+          <Navigate to={"/Signup"} />} />
+         <Route path="/editlecture/:courseId/:lectureId" element={userData?.role === "educator" ? <EditLecture/>:
+          <Navigate to={"/Signup"} />} />
+        
+         <Route path="/viewcourse/:courseId" element={userData?.role === "educator" ? <ViewCourse/>:
+          <Navigate to={"/Signup"} />} />
+          <Route path="/viewLectures/:courseId" element={userData?.role === "educator" ? <ViewLecture/>:
+          <Navigate to={"/Signup"} />} />
+        
       </Routes>
+      <Footer/>
     </>
   )
 }

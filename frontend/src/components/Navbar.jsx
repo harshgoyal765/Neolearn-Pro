@@ -56,7 +56,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full bg-black text-white px-6 py-3 flex items-center justify-between shadow-lg sticky top-0 z-50">
+      <nav className="w-full bg-teal-100 text-white px-6 py-3 flex items-center justify-between shadow-lg sticky top-0 z-50">
         {/* Left: Logo */}
         <div
           className="flex items-center gap-3 cursor-pointer"
@@ -71,9 +71,9 @@ function Navbar() {
             />
 
             {/* Brand Text */}
-            <span className="text-2xl md:text-3xl font-extrabold tracking-tight">
+            <span className="text-2xl md:text-3xl font-extrabold tracking-tight text-green-800 w-8xl">
               Neo
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-purple-600 w-8xl">
                 learn
               </span>
             </span>
