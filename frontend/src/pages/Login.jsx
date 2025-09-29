@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoEyeOutline, IoEye } from "react-icons/io5";
 import google from "../assets/google.jpg";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import { loginUser ,googleLoginUser } from "../services/api"; 
@@ -73,7 +73,7 @@ const Login = () => {
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#030d46]"
              onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
@@ -86,7 +86,7 @@ const Login = () => {
             <input
               type={show ? "text" : "password"}
               placeholder="••••••"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#030d46]"
                onChange={(e) => setPassword(e.target.value)}
             value={password}
             />
@@ -103,14 +103,14 @@ const Login = () => {
           <div className="text-right mb-4">
             <button
               onClick={() => navigate("/forgot-password")}
-              className="text-sm text-black font-medium hover:underline"
+              className="text-sm text-black font-medium hover:underline cursor-pointer  hover:text-red-800"
             >
               Forgot Password?
             </button>
           </div>
 
           {/* Login Button */}
-          <button className="w-full py-3 bg-black text-white rounded-md mb-4 hover:bg-gray-900"onClick={handlelogin} disabled={loading}>
+          <button className="w-full py-3 bg-[#030d46] text-white rounded-md mb-4 cursor-pointer hover:bg-blue-900"onClick={handlelogin} disabled={loading}>
            {loading ? <ClipLoader size={30} color='white'/> : "Login"}
           </button>
 
@@ -119,7 +119,7 @@ const Login = () => {
             Don’t have an account?{" "}
             <button
               onClick={() => navigate("/signup")}
-              className="text-black font-medium hover:underline"
+              className="text-black hover:text-red-500 cursor-pointer font-medium hover:underline"
             >
               Sign Up
             </button>
@@ -133,14 +133,14 @@ const Login = () => {
           </div>
 
           {/* Google Button */}
-          <button className="w-full py-3 border rounded-md flex items-center justify-center gap-2 hover:bg-gray-100" onClick={googleLogin}>
+          <button className="w-full py-3 border rounded-md flex items-center justify-center gap-2 hover:text-red-800 hover:bg-gray-100  cursor-pointer" onClick={googleLogin}>
             <img src={google} alt="Google" className="w-5 h-5" />
             Login with Google
           </button>
         </div>
 
         {/* Right Section - Logo */}
-        <div className="w-1/2 flex flex-col items-center justify-center bg-black text-white">
+        <div className="w-1/2 flex flex-col items-center justify-center bg-[#030d46] text-white">
           <img src={logo} alt="Logo" className="w-20 h-20 mb-4 rounded-full" />
           <p className="text-lg tracking-wide">VIRTUAL COURSES</p>
         </div>

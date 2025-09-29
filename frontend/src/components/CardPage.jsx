@@ -14,7 +14,7 @@ function CardPage() {
   }, [courseData]);
 
   return (
-    <div className="relative flex items-center justify-center flex-col bg-gradient-to-l from-indigo-200 to-green-300">
+    <div className="relative flex items-center justify-center flex-col bg-gradient-to-t from-indigo-400 to-purple-50">
       {/* Section Title */}
       <h1 className="md:text-[45px] text-[30px] font-semibold text-center mt-[30px] px-[20px]">
         Our Popular Courses

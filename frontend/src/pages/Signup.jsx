@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoEyeOutline, IoEye } from "react-icons/io5";
 import google from "../assets/google.jpg";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { signupUser ,googleSignupUser } from "../services/api"; 
@@ -72,7 +72,7 @@ const googleSignup = async () => {
           <input
             type="text"
             placeholder="Your name"
-            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#030d46]"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
@@ -82,7 +82,7 @@ const googleSignup = async () => {
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#030d46]"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
@@ -93,7 +93,7 @@ const googleSignup = async () => {
             <input
               type={show ? "text" : "password"}
               placeholder="••••••"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#030d46]"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
@@ -112,7 +112,7 @@ const googleSignup = async () => {
               type="button"
               onClick={() => setRole("student")}
               className={`px-4 py-2 rounded-md border ${
-                role === "student" ? "bg-black text-white" : "bg-white text-gray-700"
+                role === "student" ? "bg-[#030d46] text-white" : "bg-white text-gray-700"
               }`}
             >
               Student
@@ -121,7 +121,7 @@ const googleSignup = async () => {
               type="button"
               onClick={() => setRole("educator")}
               className={`px-4 py-2 rounded-md border ${
-                role === "educator" ? "bg-black text-white" : "bg-white text-gray-700"
+                role === "educator" ? "bg-[#030d46] text-white" : "bg-white text-gray-700"
               }`}
             >
               Educator
@@ -131,7 +131,7 @@ const googleSignup = async () => {
           {/* Sign Up Button */}
           <button
             type="button"
-            className="w-full py-3 bg-black text-white rounded-md mb-4 hover:bg-gray-900 disabled:opacity-50"
+            className="w-full py-3 bg-[#030d46] text-white rounded-md mb-4 hover:bg-blue-900 disabled:opacity-50"
             onClick={handleSignup}
             disabled={loading}
           >
@@ -143,7 +143,7 @@ const googleSignup = async () => {
             Already have an account?{" "}
             <span
               onClick={() => navigate("/login")}
-              className="text-black font-medium cursor-pointer hover:underline"
+              className="text-black font-medium cursor-pointer hover:underline hover:text-red-900"
             >
               Login here
             </span>
@@ -157,16 +157,16 @@ const googleSignup = async () => {
           </div>
 
           {/* Google Button */}
-          <button className="w-full py-3 border rounded-md flex items-center justify-center gap-2 hover:bg-gray-100" onClick={googleSignup}>
+          <button className="w-full py-3 border rounded-md flex items-center justify-center gap-2 hover:bg-gray-100 hover:text-red-900 cursor-pointer" onClick={googleSignup}>
             <img src={google} alt="Google" className="w-5 h-5" />
             Continue with Google
           </button>
         </div>
 
         {/* Right Section */}
-        <div className="w-1/2 flex flex-col items-center justify-center bg-black text-white">
+        <div className="w-1/2 flex flex-col items-center justify-center bg-[#030d46] text-white">
           <img src={logo} alt="Logo" className="w-20 h-20 mb-4 rounded-full" />
-          <p className="text-lg tracking-wide">VIRTUAL COURSES</p>
+          <p className="text-lg tracking-wide">NEOLEARN PRO</p>
         </div>
       </form>
     </div>

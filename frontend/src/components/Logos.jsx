@@ -3,10 +3,10 @@ import { GiMoneyStack } from "react-icons/gi";
 
 export default function Logos() {
   return (
-    <div className="w-full flex flex-wrap justify-center gap-8 py-6 px-4 lg:px-0">
+    <div className="w-full flex flex-wrap justify-center gap-8 py-6 px-4 lg:px-0 bg-cream-500 pt-10 mb-10">
       
       {/* Online Courses */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
         <FaBookOpen className="text-2xl sm:text-3xl text-teal-800" />
         <span className="text-sm sm:text-base md:text-lg font-medium text-center">
           20k+ Online Courses
@@ -14,7 +14,7 @@ export default function Logos() {
       </div>
 
       {/* Lifetime Access */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
         <FaLock className="text-2xl sm:text-3xl text-teal-800" />
         <span className="text-sm sm:text-base md:text-lg font-medium text-center">
           Lifetime Access
@@ -22,7 +22,7 @@ export default function Logos() {
       </div>
 
       {/* Value For Money */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
         <GiMoneyStack className="text-2xl sm:text-3xl text-teal-800" />
         <span className="text-sm sm:text-base md:text-lg font-medium text-center">
           Value For Money
@@ -30,7 +30,7 @@ export default function Logos() {
       </div>
 
       {/* Lifetime Support */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
         <FaHeadset className="text-2xl sm:text-3xl text-teal-800" />
         <span className="text-sm sm:text-base md:text-lg font-medium text-center">
           Lifetime Support
@@ -38,7 +38,7 @@ export default function Logos() {
       </div>
 
       {/* Community Support */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-200 px-6 py-3 rounded-full shadow-sm min-w-[180px] justify-center">
         <FaUsers className="text-2xl sm:text-3xl text-teal-800" />
         <span className="text-sm sm:text-base md:text-lg font-medium text-center">
           Community Support

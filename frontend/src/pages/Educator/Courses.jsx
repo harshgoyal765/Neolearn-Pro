@@ -32,7 +32,7 @@ const Courses = () => {
  
 
   return (
-    <div className="p-4 sm:p-6 w-full min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="p-4 sm:p-6 w-full min-h-screen bg-gradient-to-b from-indigo-100 to-purple-50">
       {/* Header with Back + Title + Create */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div className="flex items-center gap-3">

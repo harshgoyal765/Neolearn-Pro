@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux'
 import Profile from './pages/Profile'
 import ForgetPwd from './pages/ForgetPwd'
-import Editprofile from './pages/Editprofile'
+import EditProfile from './pages/EditProfile'
 import Dashboard from './pages/Educator/Dashboard'
 import Courses from './pages/Educator/Courses'
 import CreateCourses from './pages/Educator/CreateCourses'
@@ -23,6 +23,7 @@ import ViewCourse from './pages/ViewCourse'
 import ScrollToTop from './components/ScrollToTop'
 import ViewLecture from './pages/ViewLecture'
 import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 
 
 const App = () => {
@@ -35,7 +36,8 @@ const App = () => {
     
     <>
       <ToastContainer />
-      <ScrollToTop/>
+      <ScrollToTop />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Signup" element={!userData ? <Signup /> 
@@ -45,7 +47,7 @@ const App = () => {
           <Navigate to={"/signup"} />} />
          <Route path="/forgot-password" element={userData ? <ForgetPwd/>:
           <Navigate to={"/Signup"} />}/>
-         <Route path="/edit-profile" element={userData ? <Editprofile/>:
+         <Route path="/edit-profile" element={userData ? <EditProfile/>:
           <Navigate to={"/Signup"} />} />
          <Route path="/allcourses" element={userData ? <AllCourses/>:
           <Navigate to={"/Signup"} />} />

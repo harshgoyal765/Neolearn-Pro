@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUserData } from "../redux/userSlice";
 import { toast } from "react-toastify";
 import { logoutUser } from "../services/api";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -56,28 +56,20 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full bg-teal-100 text-white px-6 py-3 flex items-center justify-between shadow-lg sticky top-0 z-50">
+      <nav className="w-full bg-[linear-gradient(to_right,_#030d46_100%,_#06eaea_0%)] px-6 py-3 flex items-center justify-between shadow-lg sticky top-0 z-50 pl-18">
         {/* Left: Logo */}
         <div
           className="flex items-center gap-3 cursor-pointer"
           onClick={() => navigate("/")}
         >
-          <Link to="/" className="flex items-center gap-3">
-            {/* Logo */}
-            <img
-              src={logo}
-              alt="Company Logo"
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md object-cover border-2 border-indigo-600"
-            />
+           <Link to="/">
+          <div className="flex items-center">
+            <img className="w-14 h-14 bg-[linear-gradient(to_right,_#030d46_100%,_#06eaea_0%)]" src={logo} alt="logo" />
+            <h1 className="text-2xl font-bold text-blue-700 pl-3.5">Neo</h1>
+            <h1 className="text-2xl font-bold text-[#06eaea]">Learn PRO</h1>
+          </div>
+        </Link>
 
-            {/* Brand Text */}
-            <span className="text-2xl md:text-3xl font-extrabold tracking-tight text-green-800 w-8xl">
-              Neo
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-purple-600 w-8xl">
-                learn
-              </span>
-            </span>
-          </Link>
         </div>
 
         {/* Right: Desktop Menu */}

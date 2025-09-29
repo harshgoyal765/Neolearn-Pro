@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
-import home from "../assets/home1.jpg";
+import home1 from "../assets/homeimage.png";
+import home2 from "../assets/analytics.webp";
 import { SiViaplay } from "react-icons/si";
 import ai from "../assets/ai.png";
 import ai1 from "../assets/SearchAi.png";
@@ -9,57 +10,81 @@ import CardPage from "../components/CardPage";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <div className="w-full min-h-screen bg-white">
-      <Navbar />
+    <div className="">
+     
 
-      <img
-        src={home}
-        className="object-cover md:object-fill w-[100%] lg:h-[100%] h-[50vh] "
-        alt=""
-      />
-      <span className="lg:text-[70px] md:text-[40px] text-[20px] absolute lg:top-[10%] top-[15%] w-full flex items-center justify-center text-white font-bold">
-        Grow Your Skills to Advance
-      </span>
-
-      <span className="lg:text-[70px] md:text-[40px] text-[20px] absolute lg:top-[18%] top-[20%] w-full flex items-center justify-center text-white font-bold">
-        Your Career Path
-      </span>
-      <div className="absolute w-full flex flex-wrap items-center justify-center gap-3 px-4
-  top-[88%] sm:top-[82%] md:top-[67%] lg:top-[50%]">
-
-  <button className="flex items-center justify-center gap-2 px-5 py-2 border-2 rounded-lg
-    border-black lg:border-white text-black lg:text-white text-[10px] lg:text-[18px] font-light
-    cursor-pointer transition-colors duration-300 hover:bg-gray-200 lg:hover:bg-transparent"
-        onClick={()=>navigate('/allcourses')}>
-
-    View All Courses
-    <SiViaplay className="w-6 h-6 lg:w-8 lg:h-8 fill-current" />
-  </button>
-
-  <button className="flex items-center justify-center gap-2 px-5 py-2 rounded-lg
-    bg-black lg:bg-white text-white lg:text-black text-[10px] lg:text-[18px] font-light
-    cursor-pointer transition-colors duration-300 hover:bg-gray-800 lg:hover:bg-gray-100"
+<section className="pb-36 px-10 bg-gradient-to-b from-indigo-100 to-purple-50 pt-20 ">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-4xl lg:text-7xl font-bold leading-tight text-blue-800 mb-4">
+              NeoLearn Pro<br /> Learning Platform
+            </h1>
+            <p className="text-gray-600 mb-6">
+              Combined data through integration, analytical decision from the data warehouse. Data collection stored through Hadoop Models. Faster ways to access Big Data.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-4">
+        <button
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+          bg-gradient-to-r from-indigo-600 to-purple-800 shadow-md hover:from-purple-600 hover:to-indigo-500 text-white text-[16px] lg:text-[18px] font-medium
+          cursor-pointer transition duration-300 "
+          onClick={() => navigate("/allcourses")}
         >
+          View All Courses
+          <SiViaplay className="w-5 h-5" />
+        </button>
 
-    Search With Ai
-    <img
-      src={ai}
-      alt=""
-      className="hidden lg:block w-8 h-8 rounded-full"
-    />
-    <img
-      src={ai1}
-      alt=""
-      className="block lg:hidden w-9 h-9 rounded-full"
-    />
-  </button>
-</div>
+        <button
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg 
+          bg-gradient-to-r from-indigo-600 to-purple-800 shadow-md hover:from-purple-600 hover:to-indigo-500 text-white text-[16px] lg:text-[18px] font-medium
+          cursor-pointer transition duration-300 "
+        >
+          Search With AI
+          <img
+            src={ai}
+            alt="AI"
+            className="hidden lg:block w-8 h-8 rounded-full"
+          />
+          <img
+            src={ai1}
+            alt="AI"
+            className="block lg:hidden w-8 h-8 rounded-full"
+          />
+        </button>
+      </div>
+          </div>
+          <div className="flex-1">
+            <img
+              src={home1}
+              alt="Hero Illustration"
+              className="w-full max-w-lg mx-auto h-auto object-contain filter mix-blend-multiply"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="pb-16 px-10 bg-gradient-to-t from-indigo-200 to-purple-50 ">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-8 items-center">
+          <div className="flex-1">
+            <img
+              src={home2}
+              alt="Data Analysis"
+              className="w-full max-w-lg mx-auto "
+            />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-2xl text-blue-900 font-semibold mb-4">Analysis We Provide</h2>
+            <p className="text-gray-600 mb-6">
+              Expectation of obtaining an abstraction information of the data to derive business insights. Our tools examine the competition from the bottom up, providing a dashboard to visualize key performance indicators.
+            </p>
+            
+          </div>
+        </div>
+      </section>
 
       <Logos />
       <ExploreCourses />
-      <CardPage/>
+      <CardPage />
     </div>
   );
 };

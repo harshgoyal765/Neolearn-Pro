@@ -167,7 +167,7 @@ import { FaStar, FaArrowLeft, FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import ai from "../assets/SearchAi.png";
 import { useSelector, useDispatch } from "react-redux";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { toast } from "react-toastify";
 
 import { setUserData } from "../redux/userSlice";
@@ -271,9 +271,9 @@ const AllCourses = () => {
         `}
       >
         <div className="p-6 h-full">
-          <div className="flex items-center space-x-2 cursor-pointer mb-4" onClick={() => navigate("/")}>
+          {/* <div className="flex items-center space-x-2 cursor-pointer mb-4" onClick={() => navigate("/")}>
             <img src={logo} alt="Company Logo" className="w-20 h-20 bg-gray-800 rounded-full" />
-          </div>
+          </div> */}
 
           <h2 className="text-2xl flex items-center font-bold mb-6 border-b border-gray-800 pb-2">
             <FaArrowLeft
@@ -311,7 +311,7 @@ const AllCourses = () => {
       </aside>
 
       {/* ✅ Main Content */}
-      <main className="flex-1 p-6 bg-[linear-gradient(to_bottom_right,_indigo_10%,_white_80%,_purple_120%)]">
+      <main className="flex-1 p-6 bg-gradient-to-b from-indigo-100 to-purple-50">
         {/* Header */}
         <div className="flex justify-end gap-4 mb-6">
           <button
@@ -329,12 +329,12 @@ const AllCourses = () => {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 shadow-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {Array.isArray(filteredCourses) && filteredCourses.length > 0 ? (
             filteredCourses.map((course, idx) => (
               <div
                 key={idx}
-                className="bg-white shadow-lg hover:shadow-red-100 rounded-2xl overflow-hidden hover:scale-105 transition-transform"
+                className="bg-white shadow-lg hover:shadow-blue-900 rounded-2xl overflow-hidden hover:scale-105 transition-transform"
               >
                 <div className="w-full" style={{ aspectRatio: "16/9" }}>
                   <img
