@@ -1,7 +1,7 @@
 import axios from "axios";
  
 
-export const serverUrl = "http://localhost:8000";
+export const serverUrl = "https://neolearn-pro.onrender.com";
 
 // Signup API
 export const signupUser = async (name, email, password, role) => {
