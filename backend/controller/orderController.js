@@ -9,33 +9,7 @@ const RazorPayInstance = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET
 })
 
-
-// export const RazorpayOrder = async (req, res) => {
-//   try {
-//      console.log("KEY_ID:", process.env.RAZORPAY_KEY_ID);
-//     console.log("KEY_SECRET:", process.env.RAZORPAY_KEY_SECRET);
-//     console.log(req.body)
-//     const { courseId } = req.body
-//     const course = await Course.findById(courseId)
-//     if (!course) {
-//       return res.status(404).json({ message: "Course not found" })
-//     }
-//     const options = {
-//       amount: course.price * 100,
-//       currency: "INR",
-//       receipt: `${courseId}.toString()`,
-//     }
-//     const order = await RazorPayInstance.orders.create(options)
-//     if (!order) {
-//       return res.status(500).json({ message: "Some error occured" })
-//     }
-      
-//     return res.status(200).json(order)
-//   }
-//   catch (error) {
-//     return res.status(500).json({ message:`failed to create Razorpay order${error}`})
-//   }
-// }
+ 
 
 export const RazorpayOrder = async (req, res) => {
   try {

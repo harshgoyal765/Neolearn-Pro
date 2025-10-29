@@ -411,6 +411,7 @@ const ViewCourse = () => {
       }
     };
     fetchCourseData();
+    checkEnrollment();
   }, [courseData, courseId, dispatch]);
 
   useEffect(() => {

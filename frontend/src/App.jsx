@@ -24,6 +24,7 @@ import ScrollToTop from './components/ScrollToTop'
 import ViewLecture from './pages/ViewLecture'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import MyEnrolledCourses from './pages/MyEnrolledCourses'
 
 
 const App = () => {
@@ -65,9 +66,11 @@ const App = () => {
          <Route path="/editlecture/:courseId/:lectureId" element={userData?.role === "educator" ? <EditLecture/>:
           <Navigate to={"/Signup"} />} />
         
-         <Route path="/viewcourse/:courseId" element={userData?.role === "educator" ? <ViewCourse/>:
+         <Route path="/viewcourse/:courseId" element={userData? <ViewCourse/>:
           <Navigate to={"/Signup"} />} />
-          <Route path="/viewLectures/:courseId" element={userData?.role === "educator" ? <ViewLecture/>:
+          <Route path="/viewLecture/:courseId" element={userData? <ViewLecture/>:
+          <Navigate to={"/Signup"} />} />
+        <Route path="/mycourses" element={userData? <MyEnrolledCourses/>:
           <Navigate to={"/Signup"} />} />
         
       </Routes>
