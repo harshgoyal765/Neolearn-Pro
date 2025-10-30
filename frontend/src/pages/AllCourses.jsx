@@ -120,7 +120,7 @@ const AllCourses = () => {
           </h2>
 
           <form onSubmit={(e) => e.preventDefault()}>
-            <button className="w-full flex items-center justify-center gap-2 px-4 py-2 mb-4 rounded-lg bg-gray-800 text-gray-200">
+            <button className="w-full flex items-center justify-center gap-2 px-4 py-2 mb-4 rounded-lg bg-gray-800 text-gray-200" onClick={()=>navigate("/search")}>
               Search with AI
               <img src={ai} className="w-[25px] h-[25px] rounded-full" alt="AI" />
             </button>

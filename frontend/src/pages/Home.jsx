@@ -9,6 +9,7 @@ import ExploreCourses from "../components/ExploreCourses";
 import CardPage from "../components/CardPage";
 import { useNavigate } from "react-router-dom";
 
+
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -39,6 +40,7 @@ const Home = () => {
           className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg 
           bg-gradient-to-r from-indigo-600 to-purple-800 shadow-md hover:from-purple-600 hover:to-indigo-500 text-white text-[16px] lg:text-[18px] font-medium
           cursor-pointer transition duration-300 "
+                onClick={()=>navigate('/search')}
         >
           Search With AI
           <img
@@ -85,6 +87,7 @@ const Home = () => {
       <Logos />
       <ExploreCourses />
       <CardPage />
+      
     </div>
   );
 };

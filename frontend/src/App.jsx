@@ -25,6 +25,7 @@ import ViewLecture from './pages/ViewLecture'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import MyEnrolledCourses from './pages/MyEnrolledCourses'
+import SearchWithAi from './pages/SearchWithAi'
 
 
 const App = () => {
@@ -71,6 +72,8 @@ const App = () => {
           <Route path="/viewLecture/:courseId" element={userData? <ViewLecture/>:
           <Navigate to={"/Signup"} />} />
         <Route path="/mycourses" element={userData? <MyEnrolledCourses/>:
+          <Navigate to={"/Signup"} />} />
+        <Route path="/search" element={userData? <SearchWithAi/>:
           <Navigate to={"/Signup"} />} />
         
       </Routes>

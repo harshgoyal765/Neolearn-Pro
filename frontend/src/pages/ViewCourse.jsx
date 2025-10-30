@@ -396,6 +396,7 @@ const ViewCourse = () => {
   const [creatorCourses, setCreatorCourses] = useState([]);
   const [isEnrolled, setIsEnrolled] = useState(false);
 
+
   const handleReviewSubmit = (review) => {
     console.log("Review submitted:", review);
   };
@@ -701,7 +702,7 @@ const ViewCourse = () => {
       </div>
 
       {/* Review Section */}
-      <WriteReview onSubmit={handleReviewSubmit} />
+      <WriteReview  courseId={courseId} onSubmit={handleReviewSubmit} />
     </div>
   );
 };
