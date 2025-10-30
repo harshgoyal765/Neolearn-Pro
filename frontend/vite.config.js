@@ -8,8 +8,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        // target: "https://neolearn-pro.onrender.com",
-        target: "https://localhost:8000",
+        target: "https://neolearn-pro.onrender.com",
+        // target: "https://localhost:8000",
         changeOrigin: true,
         secure: false,
       },
