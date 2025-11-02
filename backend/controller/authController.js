@@ -136,27 +136,62 @@ export const resetPassword = async (req, res) => {
 }
 
 
+// export const googleAuth = async (req, res) => {
+//   try {
+//     const { name, email, role } = req.body
+//     const user = await User.findOne({ email })
+//     if (!user) {
+//       user = await User.create({
+//         name,
+//         email,
+//         role
+//       })
+//     }
+//       let token = await genToken(user._id);
+//       res.cookie("token", token, {
+//       httpOnly: true,
+//       secure: true,
+//       sameSite: "none",
+//       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days convert in miliseconds
+//     });
+//     return res.status(200).json(user)
+//   }
+//   catch (error) {
+//       return res.status(500).json({ message: `google auth error: ${error.message}` });
+//   }
+// }
+
 export const googleAuth = async (req, res) => {
   try {
-    const { name, email, role } = req.body
-    const user = await User.findOne({ email })
+    const { name, email, role } = req.body;
+    let user = await User.findOne({ email });
+
+    // If user not found, create one
     if (!user) {
       user = await User.create({
         name,
         email,
-        role
-      })
+        role,
+      });
     }
-      let token = await genToken(user._id);
-      res.cookie("token", token, {
+
+    // Generate JWT
+    const token = await genToken(user._id);
+
+    // Set cookie
+    res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days convert in miliseconds
+      secure: true,       // true for HTTPS (works only on hosting, not localhost)
+      sameSite: "none",   // required for cross-domain cookies (frontend-backend different URLs)
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-    return res.status(200).json(user)
+
+    return res.status(200).json({
+      success: true,
+      message: "Google authentication successful",
+      user,
+    });
+  } catch (error) {
+    return res.status(500).json({ message: `Google auth error: ${error.message}` });
   }
-  catch (error) {
-      return res.status(500).json({ message: `google auth error: ${error.message}` });
-  }
-}
+};
