@@ -44,7 +44,7 @@ function Card({ thumbnail, title, category, price, id }) {
         <p className="text-indigo-600 font-bold text-xl">₹{price}</p>
 
         {/* Button */}
-        <button className="w-full mt-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-xl font-medium transition-all duration-300">
+        <button className="w-full mt-2 bg-gradient-to-r from-indigo-600 to-purple-800 shadow-md hover:from-purple-600 hover:to-indigo-500 text-white py-2 rounded-xl font-medium transition-all duration-300 cursor-pointer">
           View Course
         </button>
       </div>
