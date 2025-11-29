@@ -17,7 +17,7 @@ export const googleSignupUser = (name, email, role) =>
   axios.post(`${serverUrl}/api/auth/googleauth`, { name, email, role }, { withCredentials: true });
 
 export const googleLoginUser = (name, email, role) =>
-  axios.post(`${serverUrl}/auth/googleauth`, { name, email, role }, { withCredentials: true });
+  axios.post(`${serverUrl}/api/auth/googleauth`, { name, email, role }, { withCredentials: true });
 
 //login api
 export const loginUser = async (email, password) => {
