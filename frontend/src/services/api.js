@@ -182,7 +182,7 @@ export const submitReview = async ({ rating, comment, courseId }) => {
 
 export const getAllReviewApi = async () => {
   return axios.get(
-    "http://localhost:8000/api/review/allReview",
+    `${serverUrl}/api/review/allReview`,
     { withCredentials: true }
   );
 };
