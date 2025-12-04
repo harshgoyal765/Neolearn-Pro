@@ -45,7 +45,6 @@ const googleSignup = async () => {
     let name = user.displayName;
     let email = user.email;
 
-    // Use api.js function
     const result = await googleSignupUser(name, email, role);
 
     dispatch(setUserData(result.data));

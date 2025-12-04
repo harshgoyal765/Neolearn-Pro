@@ -8,6 +8,8 @@ import Logos from "../components/Logos";
 import ExploreCourses from "../components/ExploreCourses";
 import CardPage from "../components/CardPage";
 import { useNavigate } from "react-router-dom";
+import ReviewPage from "../components/ReviewPage";
+import AboutSection from "../components/AboutSection";
 
 
 const Home = () => {
@@ -87,6 +89,8 @@ const Home = () => {
       <Logos />
       <ExploreCourses />
       <CardPage />
+      <AboutSection/>
+      <ReviewPage/>
       
     </div>
   );

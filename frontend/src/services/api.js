@@ -168,13 +168,23 @@ export const razorOrderVerify = (response,courseId,userId) => {
   });
 };
 
+export const submitReview = async ({ rating, comment, courseId }) => {
+  return axios.post(
+    "http://localhost:8000/api/review/givereview",
+    {
+      rating,
+      comment,
+      courseId,
+    },
+    { withCredentials: true }
+  );
+};
 
-export const submitReview = (rating,comment,courseId) => {
-  return axios.post(`${serverUrl}/api/review/givereview`, {
-    rating,comment,courseId
-  }, {
-    withCredentials: true,
-  });
+export const getAllReviewApi = async () => {
+  return axios.get(
+    "http://localhost:8000/api/review/allReview",
+    { withCredentials: true }
+  );
 };
 
 export const recommendationResult = (query) => {

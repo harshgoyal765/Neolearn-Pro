@@ -485,6 +485,18 @@ const ViewCourse = () => {
     }
   };
 
+  const calculateAvgReview = (reviews) => {
+    if (!reviews || reviews.length === 0) return 0;
+    const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+    return (total / reviews.length).toFixed(1);
+  };
+
+
+  const avgRating = calculateAvgReview(selectedCourse?.reviews);  
+
+  
+
+
   return (
     <div className="bg-[linear-gradient(to_bottom,_#030d46_0%,_#d8b4fe_50%,_#ffffff_130%)]
  to-white min-h-screen px-4 md:px-10 py-8 text-gray-800">
@@ -541,10 +553,10 @@ const ViewCourse = () => {
             <div className="flex items-center gap-2 text-sm">
               <span className="text-yellow-500">⭐</span>
               <span className="font-semibold">
-                {selectedCourse?.rating || 5}
+                {avgRating || 5}
               </span>
               <span className="text-gray-500">
-                ({selectedCourse?.reviews || "1,200"} Reviews)
+                ({selectedCourse?.reviews?.length || "1,200"} Reviews)
               </span>
             </div>
             <div className="flex items-center gap-3 text-lg font-semibold">

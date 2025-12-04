@@ -3,7 +3,16 @@ import { FaStar } from "react-icons/fa6";
 import emptyImg from "../assets/empty.jpg";
 import { useNavigate } from "react-router-dom";
 
-function Card({ thumbnail, title, category, price, id }) {
+function Card({ thumbnail, title, category, price, id, reviews}) {
+  const calculateAvgReview = (reviews) => {
+    if (!reviews || reviews.length === 0) return 0;
+    const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+    return (total / reviews.length).toFixed(1);
+  };
+
+
+  const avgRating = calculateAvgReview(reviews);
+
   const navigate = useNavigate()
   return (
     <div className="max-w-sm w-full bg-white rounded-2xl overflow-hidden 
@@ -30,15 +39,21 @@ function Card({ thumbnail, title, category, price, id }) {
           {title}
         </h2>
 
-        {/* Rating */}
-        <div className="flex items-center gap-1 text-yellow-500 text-sm">
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <span className="text-gray-600 text-xs ml-1">(5.0)</span>
-        </div>
+       {/* Rating */}
+<div className="flex items-center gap-1 text-sm">
+  {[1, 2, 3, 4, 5].map((star) => (
+    <FaStar
+      key={star}
+      className={`${
+        star <= Math.round(avgRating)
+          ? "text-yellow-500"
+          : "text-gray-300"
+      }`}
+    />
+  ))}
+  <span className="text-gray-600 text-xs ml-1">{avgRating}</span>
+</div>
+
 
         {/* Price */}
         <p className="text-indigo-600 font-bold text-xl">₹{price}</p>

@@ -14,7 +14,7 @@ function CardPage() {
   }, [courseData]);
 
   return (
-    <div className="relative flex items-center justify-center flex-col bg-gradient-to-t from-indigo-400 to-purple-50">
+    <div className="relative flex items-center justify-center flex-col bg-gradient-to-t from-indigo-300 to-purple-50">
       {/* Section Title */}
       <h1 className="md:text-[45px] text-[30px] font-semibold text-center mt-[30px] px-[20px]">
         Our Popular Courses
@@ -36,6 +36,7 @@ function CardPage() {
             category={course.category}
             price={course.price}
             id={course._id}
+            reviews={course.reviews}
           />
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Route , Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Signup from './pages/Signup'
@@ -26,12 +26,14 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import MyEnrolledCourses from './pages/MyEnrolledCourses'
 import SearchWithAi from './pages/SearchWithAi'
+import getAllReviews from './customHooks/getAllReviews'
 
 
 const App = () => {
   useGetCurrentUser()
   getCreatorCourse()
   getPublishedCourse()
+  getAllReviews()
   const { userData } = useSelector((state) => state.user);
    const location = useLocation();
   return (

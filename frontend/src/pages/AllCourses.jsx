@@ -55,7 +55,7 @@ const AllCourses = () => {
 
   useEffect(() => {
     if (!Array.isArray(courseData)) return;
-
+     console.log("All Courses:", courseData);
     let courseCopy = [...courseData];
     if (category.length > 0) {
       courseCopy = courseCopy.filter((c) =>
@@ -82,6 +82,14 @@ const AllCourses = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+const calculateAvgReview = (reviews) => {
+    if (!reviews || reviews.length === 0) return 0;
+    const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+    return (total / reviews.length).toFixed(1);
+  };
+
+
 
   return (
     <div className="flex min-h-screen bg-gray-100 relative">
@@ -182,12 +190,26 @@ const AllCourses = () => {
                 <div className="p-4">
                   <h3 className="font-semibold text-lg">{course.title}</h3>
                   <p className="text-sm text-gray-500">{course.category}</p>
-                  <div className="flex justify-between items-center mt-3">
-                    <span className="font-bold text-gray-800">₹{course.price}</span>
-                    <span className="flex items-center text-yellow-500">
-                      <FaStar className="mr-1" /> {course.rating}
-                    </span>
-                  </div>
+                 <div className="flex justify-between items-center mt-3">
+  <span className="font-bold text-gray-800">₹{course.price}</span>
+
+  <div className="flex items-center gap-1 text-sm">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <FaStar
+        key={star}
+        className={`${
+          star <= Math.round(calculateAvgReview(course.reviews))
+            ? "text-yellow-500"
+            : "text-gray-300"
+        }`}
+      />
+    ))}
+    <span className="text-gray-600 text-xs ml-1">
+      {calculateAvgReview(course.reviews)}
+    </span>
+  </div>
+</div>
+
                 </div>
               </div>
             ))

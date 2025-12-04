@@ -20,18 +20,19 @@ const WriteReview = ({ onSubmit, courseId }) => {
     }
     
     try {
+      
       setLoading(true);
-      console.log("Submitting review data:", { rating, comment, courseId });
+      console.log("Before API Call:", { rating, comment, courseId });
       const result = await submitReview({ rating, comment, courseId });
-
+      
       toast.success("Review submitted successfully!");
       setRating(0);
       setComment("");
 
-      if (onSubmit) onSubmit(result); // optional callback
+      if (onSubmit) onSubmit(result); 
     } catch (error) {
       console.error("Review submission failed:", error);
-      toast.error("Failed to submit review");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }
