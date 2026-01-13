@@ -50,8 +50,8 @@ const CreateLecture = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center p-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-300 via-purple-200 to-indigo-300 flex justify-center items-center p-4">
+      <div className="bg-white p-8 rounded-lg shadow-xl shadow-[#030d46] w-full max-w-2xl">
         <h2 className="text-2xl font-bold mb-2">Let’s Add a Lecture</h2>
         <p className="text-gray-600 mb-4">
           Enter the title and add your video lectures to enhance your course
@@ -60,13 +60,13 @@ const CreateLecture = () => {
         <input
           type="text"
           placeholder="e.g. Introduction to Mern Stack"
-          className="w-full border rounded-lg p-3 mb-4"
+          className="w-full border rounded-lg p-3 mb-4 border-gray-300  focus:outline-none focus:ring-2 focus:ring-indigo-800"
           value={lectureTitle}
           onChange={(e) => setLectureTitle(e.target.value)}
         />
         <div className="flex items-center gap-4 mb-6">
           <button
-            className="px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300 transition"
+            className="px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300 transition cursor-pointer hover:scale-105"
             onClick={() => navigate(`/editcourse/${courseId}`)}
           >
             ← Back to Course
@@ -74,7 +74,7 @@ const CreateLecture = () => {
 
           <button
             onClick={handleAddLecture}
-            className="px-4 py-2 bg-black text-white rounded-lg hover:scale-105 transition"
+            className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 text-white cursor-pointer rounded-lg hover:scale-105 transition"
             disabled={loading}
           >
             {loading ? (

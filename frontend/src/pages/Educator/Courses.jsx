@@ -48,7 +48,7 @@ const Courses = () => {
         </div>
         <button
           onClick={() => navigate("/createcourses")}
-          className="w-full sm:w-auto px-5 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
+          className="w-full sm:w-auto px-5 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 text-white font-semibold shadow-lg hover:scale-105 cursor-pointer hover:shadow-2xl transition-all duration-300 text-sm sm:text-base"
         >
           + Create Course
         </button>
@@ -96,7 +96,7 @@ const Courses = () => {
                   >
                     {course.isPublished ? "Published" : "Draft"}
                   </span>
-                  <button className="ml-auto px-3 sm:px-4 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs sm:text-sm rounded-lg shadow hover:scale-105 hover:shadow-md transition"
+                  <button className="ml-auto px-3 sm:px-4 py-1.5 bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 text-white text-xs sm:text-sm rounded-lg shadow hover:scale-105 hover:shadow-md transition cursor-pointer"
                  onClick={() => navigate(`/editcourse/${course?._id}`)}
 >
                     Action

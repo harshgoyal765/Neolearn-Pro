@@ -195,7 +195,7 @@ const CreateCourse = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Enter course title"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
             />
           </div>
 
@@ -207,7 +207,7 @@ const CreateCourse = () => {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
             >
               <option value="">Select category</option>
               <option value="Web Development">Web Development</option>
@@ -223,7 +223,7 @@ const CreateCourse = () => {
           {/* Submit */}
           <button
             onClick={handleCreateCourse}
-            className="w-full py-2 flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-800 hover:from-purple-600 hover:to-indigo-500 text-white font-semibold rounded-lg transition duration-300 disabled:opacity-70"
+            className="w-full py-2 flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 text-white font-semibold rounded-lg transition duration-300 disabled:opacity-70 cursor-pointer"
             disabled={loading}
           >
             {loading ? <ClipLoader size={25} color="white" /> : "Create Course"}

@@ -169,7 +169,7 @@ const handleRemove = async () => {
           <FaArrowLeft className="mr-2" /> Back
         </button>
         <button
-          className="px-4 py-2 rounded-lg bg-black text-white shadow hover:scale-105 transition" onClick={()=> navigate(`/createlecture/${selectCourse?._id}`)}
+          className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 cursor-pointer text-white shadow hover:scale-105 transition" onClick={()=> navigate(`/createlecture/${selectCourse?._id}`)}
         >
           Go to lectures page
         </button>
@@ -182,14 +182,14 @@ const handleRemove = async () => {
         <button
           onClick={handlePublishToggle}
           className={`px-4 py-2 rounded-lg font-semibold shadow ${
-            isPublished ? "bg-red-500" : "bg-green-500"
+            isPublished ? "bg-red-500 cursor-pointer hover:bg-red-800" : "bg-green-500 cursor-pointer  hover:bg-green-800"
           } text-white`}
         >
           {isPublished ? "Unpublish" : "Click to Publish"}
         </button>
         <button
           onClick={handleRemove}
-          className="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold shadow hover:opacity-90"
+          className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-800 text-white font-semibold shadow cursor-pointer hover:opacity-90"
         >
           Remove Course
         </button>
@@ -231,12 +231,13 @@ const handleRemove = async () => {
             className="border rounded-lg p-3"
           >
             <option value="">Select Category</option>
-            <option value="programming">Programming</option>
-            <option value="designing">Design</option>
-            <option value="marketing">Marketing</option>
-            <option value="ai-ml">AI & ML</option>
-            <option value="data-science">Data Science</option>
-            <option value="ui-ux">UI/UX Designing</option>
+            <option value="Programming">Programming</option>
+            <option value="Designing">Design</option>
+            <option value="Marketing">Marketing</option>
+            <option value="AI-ML">AI & ML</option>
+            <option value="Data-Science">Data Science</option>
+            <option value="UI-UX">UI/UX Designing</option>
+            <option value="Web Development">Web Development</option>
           </select>
 
           <select
@@ -288,13 +289,13 @@ const handleRemove = async () => {
         <div className="flex justify-end gap-4 mt-4">
           <button
             onClick={() => navigate("/courses")}
-            className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
+            className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer"
           >
             Cancel
           </button>
           <button
             onClick={handleEditCourse}
-            className="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:scale-105 transition"
+            className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-800  hover:from-purple-600 hover:to-indigo-500 text-white rounded-lg shadow hover:scale-105 transition cursor-pointer"
             disabled={loading}
           >
             {loading ? <ClipLoader size={30} color="white" /> : "Save"}
