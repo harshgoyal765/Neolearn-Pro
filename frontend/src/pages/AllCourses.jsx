@@ -55,13 +55,11 @@ const AllCourses = () => {
 
   useEffect(() => {
     if (!Array.isArray(courseData)) return;
-     console.log("All Courses:", courseData);
+    console.log("All Courses:", courseData);
     let courseCopy = [...courseData];
     if (category.length > 0) {
       courseCopy = courseCopy.filter((c) =>
-        category.some(
-          (cat) => cat.toLowerCase() === c.category?.toLowerCase()
-        )
+        category.some((cat) => cat.toLowerCase() === c.category?.toLowerCase())
       );
     }
     setFilteredCourses(courseCopy);
@@ -83,22 +81,18 @@ const AllCourses = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-const calculateAvgReview = (reviews) => {
+  const calculateAvgReview = (reviews) => {
     if (!reviews || reviews.length === 0) return 0;
     const total = reviews.reduce((sum, review) => sum + review.rating, 0);
     return (total / reviews.length).toFixed(1);
   };
 
-
-
   return (
     <div className="flex min-h-screen bg-gray-100 relative">
-
       {/* ✅ Hamburger Button */}
       <button
         className="fixed top-4 left-4 z-50 text-white bg-gray-900 p-2 rounded-md lg:hidden"
         onClick={() => setSidebarOpen((prev) => !prev)}
-        
       >
         <FaBars />
       </button>
@@ -115,10 +109,6 @@ const calculateAvgReview = (reviews) => {
         `}
       >
         <div className="p-6 h-full">
-          {/* <div className="flex items-center space-x-2 cursor-pointer mb-4" onClick={() => navigate("/")}>
-            <img src={logo} alt="Company Logo" className="w-20 h-20 bg-gray-800 rounded-full" />
-          </div> */}
-
           <h2 className="text-2xl flex items-center font-bold mb-6 border-b border-gray-800 pb-2">
             <FaArrowLeft
               className="mr-2 cursor-pointer hover:text-purple-400 transition"
@@ -128,25 +118,31 @@ const calculateAvgReview = (reviews) => {
           </h2>
 
           <form onSubmit={(e) => e.preventDefault()}>
-            <button className="w-full flex items-center justify-center gap-2 px-4 py-2 mb-4 rounded-lg bg-gray-800 text-gray-200" onClick={()=>navigate("/search")}>
+            <button
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 mb-4 rounded-lg bg-gray-800 text-gray-200"
+              onClick={() => navigate("/search")}
+            >
               Search with AI
-              <img src={ai} className="w-[25px] h-[25px] rounded-full" alt="AI" />
+              <img
+                src={ai}
+                className="w-[25px] h-[25px] rounded-full"
+                alt="AI"
+              />
             </button>
 
             <ul className="space-y-3">
               {categories.map((cat, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 cursor-pointer transition"
-                >
-                  <input
-                    type="checkbox"
-                    value={cat}
-                    checked={category.includes(cat)}
-                    onChange={toggleCategory}
-                    className="accent-purple-500 w-4 h-4 cursor-pointer rounded-md"
-                  />
-                  <span className="text-sm font-medium">{cat}</span>
+                <li className="p-2 rounded-lg hover:bg-gray-800 transition">
+                  <label className="flex items-center space-x-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      value={cat}
+                      checked={category.includes(cat)}
+                      onChange={toggleCategory}
+                      className="accent-purple-500 w-4 h-4 cursor-pointer rounded-md"
+                    />
+                    <span className="text-sm font-medium">{cat}</span>
+                  </label>
                 </li>
               ))}
             </ul>
@@ -160,7 +156,7 @@ const calculateAvgReview = (reviews) => {
         <div className="flex justify-end gap-4 mb-6">
           <button
             className="px-4 py-2 bg-blue-950 cursor-pointer hover:bg-red-500 text-white rounded-lg"
-            onClick={() => navigate('/dashboard')}
+            onClick={() => navigate("/dashboard")}
           >
             Dashboard
           </button>
@@ -190,26 +186,28 @@ const calculateAvgReview = (reviews) => {
                 <div className="p-4">
                   <h3 className="font-semibold text-lg">{course.title}</h3>
                   <p className="text-sm text-gray-500">{course.category}</p>
-                 <div className="flex justify-between items-center mt-3">
-  <span className="font-bold text-gray-800">₹{course.price}</span>
+                  <div className="flex justify-between items-center mt-3">
+                    <span className="font-bold text-gray-800">
+                      ₹{course.price}
+                    </span>
 
-  <div className="flex items-center gap-1 text-sm">
-    {[1, 2, 3, 4, 5].map((star) => (
-      <FaStar
-        key={star}
-        className={`${
-          star <= Math.round(calculateAvgReview(course.reviews))
-            ? "text-yellow-500"
-            : "text-gray-300"
-        }`}
-      />
-    ))}
-    <span className="text-gray-600 text-xs ml-1">
-      {calculateAvgReview(course.reviews)}
-    </span>
-  </div>
-</div>
-
+                    <div className="flex items-center gap-1 text-sm">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <FaStar
+                          key={star}
+                          className={`${
+                            star <=
+                            Math.round(calculateAvgReview(course.reviews))
+                              ? "text-yellow-500"
+                              : "text-gray-300"
+                          }`}
+                        />
+                      ))}
+                      <span className="text-gray-600 text-xs ml-1">
+                        {calculateAvgReview(course.reviews)}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))
