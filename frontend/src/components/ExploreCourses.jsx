@@ -2,8 +2,10 @@ import React from "react";
 import { SiViaplay } from "react-icons/si";
 import { FaHackerrank } from "react-icons/fa6";
 import { MdAppShortcut } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const ExploreCourses = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-[100vw] min-h-[60vh] flex flex-col lg:flex-row items-center justify-center gap-8 px-[30px] py-12 bg-cream-100">
       {/* left/top div */}
@@ -15,10 +17,9 @@ const ExploreCourses = () => {
           Our Courses
         </span>
         <p className="text-[17px] text-gray-600 mt-4 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Rem vel
-          explicabo laboriosam accusantium egestila laudentium liberere magnum.
+          Discover industry-focused courses designed to build real-world skills. Learn from structured content, hands-on projects, and expert guidance to accelerate your tech career.
         </p>
-        <button className="flex items-center cursor-pointer gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-800 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-indigo-500 transition-all duration-500 font-medium">
+        <button className="flex items-center cursor-pointer gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-800 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-indigo-500 transition-all duration-500 font-medium"onClick={()=>navigate("allcourses")}>
           Explore Courses
           <SiViaplay className="w-[24px] h-[24px] animate-pulse" />
         </button>
