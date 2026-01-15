@@ -65,8 +65,8 @@ const ForgetPwd = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white shadow-lg p-8 rounded-lg w-[400px]">
+    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-indigo-300 via-purple-200">
+      <div className="bg-white shadow-lg p-8 rounded-lg w-[600px] ">
         {/* Step 1 */}
         {step === 1 && (
           <form onSubmit={(e) => e.preventDefault()}>
@@ -84,7 +84,7 @@ const ForgetPwd = () => {
             />
             <button
               onClick={handleSendOtp}
-              className="w-full bg-black text-white p-2 rounded"
+              className="w-full bg-[#030d46] text-white p-2 rounded"
               disabled={loading}
             >
               {loading ? <ClipLoader size={25} color="white" /> : "Send OTP"}
@@ -115,7 +115,7 @@ const ForgetPwd = () => {
             />
             <button
               onClick={handleVerifyOtp}
-              className="w-full bg-black text-white p-2 rounded"
+              className="w-full bg-[#030d46] text-white p-2 rounded"
               disabled={loading}
             >
               {loading ? <ClipLoader size={25} color="white" /> : "Verify OTP"}
@@ -154,7 +154,7 @@ const ForgetPwd = () => {
             />
             <button
               onClick={handleResetPassword}
-              className="w-full bg-black text-white p-2 rounded"
+              className="w-full bg-[#030d46] text-white p-2 rounded"
               disabled={loading}
             >
               {loading ? <ClipLoader size={25} color="white" /> : "Reset Password"}
